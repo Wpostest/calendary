@@ -1,0 +1,80 @@
+body{
+    font-family: Georgia;
+    margin: 0;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+}
+
+.header__title--wrapper, .header__form--wrapper{
+    background-color: #3CB371;
+    color: white;
+    width: 40%;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.header__form{
+    padding: 30px;
+}
+
+.header__logo--wrapper{
+    background-color: #3CB371;
+    width: 20%;
+    height: 100px;
+
+    .header__logo--circle{
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background-color: rgba(#4287f5, .5);    
+        margin-top: 10px;
+        position: relative;
+    }
+
+    .header__logo{
+        padding: 30px;
+        color: #fff;
+        font-size: 2rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);    
+    }
+}
+
+.calendary{
+    display: grid;
+    grid-template-columns: repeat(7, minmax(170px, 170px));
+    grid-auto-rows: minmax(90px, auto);
+    grid-gap: 5px;
+    padding: 5px;
+
+}
+
+.calendary__day{
+    background-color: #FFDAB9;
+    border: 1px solid #3CB371;
+    height: 90px;
+
+    &.current-day{
+        background-color: red;
+    }
+
+    &.blank-day{
+        background-color: unset;
+        border: none;
+    }
+
+    .calendary__day--title{
+        text-align: right;
+    }
+}
+
+.footer{
+    background-color: #3CB371;
+    color: white;
+}

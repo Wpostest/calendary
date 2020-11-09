@@ -1,0 +1,10 @@
+CREATE TABLE tasks(
+	fdDate DATE NOT NULL,
+    fdName varchar(25) NOT NULL,
+    UNIQUE(fdDate)
+)
+
+INSERT INTO tasks(fdDate, fdName) VALUES(STR_TO_DATE('1-11-2020', '%d-%m-%Y'), 'Remont'), (STR_TO_DATE('2-11-2020', '%d-%m-%Y'), 'Remont'), (STR_TO_DATE('3-11-2020', '%d-%m-%Y'), 'Remont'), (STR_TO_DATE('4-11-2020', '%d-%m-%Y'), 'Remont'), (STR_TO_DATE('6-11-2020', '%d-%m-%Y'), 'Rower'), (STR_TO_DATE('7-11-2020', '%d-%m-%Y'), 'Rower'), (STR_TO_DATE('11-11-2020', '%d-%m-%Y'), 'Weterynarz'), (STR_TO_DATE('13-11-2020', '%d-%m-%Y'), 'Sopot'), (STR_TO_DATE('14-11-2020', '%d-%m-%Y'), 'Sopot'), (STR_TO_DATE('17-11-2020', '%d-%m-%Y'), 'Wyjazd na wakacje!'), (STR_TO_DATE('19-11-2020', '%d-%m-%Y'), 'Tatry'), (STR_TO_DATE('20-11-2020', '%d-%m-%Y'), 'Tatry'),(STR_TO_DATE('21-11-2020', '%d-%m-%Y'), 'Tatry'), (STR_TO_DATE('22-11-2020', '%d-%m-%Y'), 'Tatry'), (STR_TO_DATE('23-11-2020', '%d-%m-%Y'), 'Tatry'), (STR_TO_DATE('24-11-2020', '%d-%m-%Y'), 'Tatry'), (STR_TO_DATE('29-11-2020', '%d-%m-%Y'), 'Weterynarz')
+
+SELECT fdDate, fdName, DAY(fdDate) as fdDay, MONTH(fdDate) as fdMonth, WEEKDAY(fdDate) as fdWeekDay, DATE_FORMAT(fdDate, '%d-%m-%Y') as fdDisplayDate FROM `tasks`
+            WHERE MONTH(fdDate) = $month AND YEAR(fdDate) = $year order by DAY(fdDate)
